@@ -1,0 +1,8 @@
+http:
+  listener:
+    port: 8082
+
+sap:
+  host: "sap-dev.internal.company.com"
+  client: "100"
+  systemNumber: "00"

@@ -1,0 +1,8 @@
+{
+  "minMuleVersion": "4.4.0",
+  "name": "inventory-sapi",
+  "configs": ["global-config.xml", "inventory-sapi-impl.xml"],
+  "secureProperties": ["secure::sap.username", "secure::sap.password"],
+  "classLoaderModelLoaderDescriptor": { "id": "mule", "attributes": { "exportedResources": [] } },
+  "bundleDescriptorLoader": { "id": "mule", "attributes": {} }
+}

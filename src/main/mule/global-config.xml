@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:http="http://www.mulesoft.org/schema/mule/http"
+      xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
+      xsi:schemaLocation="
+          http://www.mulesoft.org/schema/mule/core https://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/http https://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+          http://www.mulesoft.org/schema/mule/secure-properties https://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
+
+    <secure-properties:config name="Secure_Properties_Config" file="${mule.env}.yaml" key="${secure.key}">
+        <secure-properties:encrypt algorithm="AES" mode="CBC"/>
+    </secure-properties:config>
+
+    <http:listener-config name="HTTP_Listener_Config">
+        <http:listener-connection host="0.0.0.0" port="${http.listener.port}"/>
+    </http:listener-config>
+
+</mule>
